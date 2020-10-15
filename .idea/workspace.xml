@@ -35,7 +35,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="slave" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -84,10 +84,22 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602750739430">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1602750739430" />
+    <state x="147" y="69" key="MergeDialog" timestamp="1602751162050">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="147" y="69" key="MergeDialog/0.0.1536.864@0.0.1536.864" timestamp="1602751162050" />
+    <state x="407" y="194" key="MultipleFileMergeDialog" timestamp="1602751162055">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="407" y="194" key="MultipleFileMergeDialog/0.0.1536.864@0.0.1536.864" timestamp="1602751162055" />
   </component>
 </project>

@@ -53,7 +53,7 @@ import BasketItem from "./models/BasketItem";
 import NewCardItem from "./components/pages/NewCardItem";
 //import ShopProgrammers from "./components/pages/ShopProgrammers";
 
-
+//check git
 
 function errorHandler(error: ErrorTypes) { //Not research yet
     if (error === ErrorTypes.AUTH_ERROR) {

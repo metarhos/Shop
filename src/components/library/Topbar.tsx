@@ -91,7 +91,6 @@ const Topbar:React.FC<RouteComponentProps&Props> = (props: RouteComponentProps&P
 
                    )
                }
-
                if(item.label == 'Employees') {
                    return (
 
@@ -99,7 +98,6 @@ const Topbar:React.FC<RouteComponentProps&Props> = (props: RouteComponentProps&P
 
                    )
                }
-               //here comment for git
                 if(item.label == 'Statistics') {
                     return <PopUpTopBar  name={'Statistics'} data={props.dropMenu[1]!}/>
                 }

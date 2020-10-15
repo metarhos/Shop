@@ -1,0 +1,27 @@
+
+Add Authorize
+Add hosting
+
+Basket:
+1) Add final prise
+2) Add button CONFIRM
+
+Cards:
+1) Add filter
+2) Add Sort
+
+TopBar:
+1) Change name of bar when resize and open component
+2) Present View
+3) Close and reopen oppened tabs with menu
+4) Fix topBar on top
+
+Add Registrate
+
+NewProduct:
+1) Add all Field
+2) Validate all field
+3) Add Random ID
+
+Refactoring Cards for 1 component or 2 with carouselle
+

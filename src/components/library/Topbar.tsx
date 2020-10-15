@@ -73,12 +73,15 @@ const Topbar:React.FC<RouteComponentProps&Props> = (props: RouteComponentProps&P
         setFlOpen(true)
     };
 
- //   const item1 = [{path: PATH_BASKET,label: 'Basket'}]
+    function setSubMenuValue(index: number) {
+        setValue(index);
+    }
+
     return <React.Fragment>
         <Tabs onChange={handleChange} value={value}>
             {/*Tabs is function who take value and active*/}
             {/*value is numbers of tab in tabs. Tab = view of concrete MENU by massive of Tabs*/}
-            {getNavItems().map(item =>  {
+            {getNavItems().map((item, index) =>  {
 
                 //forEach tab add additionalMenu
 
@@ -93,18 +96,19 @@ const Topbar:React.FC<RouteComponentProps&Props> = (props: RouteComponentProps&P
                }
 
                if(item.label == 'Employees') {
+
                    return (
-
-                       <PopUpTopBar  name={'Employees'} data={props.dropMenu[0]!}/>
-
+                       <PopUpTopBar index={index} setIndexFn={setSubMenuValue} name={'Employees'} data={props.dropMenu[0]!}/>
                    )
                }
                //here comment for git
                 if(item.label == 'Statistics') {
-                    return <PopUpTopBar  name={'Statistics'} data={props.dropMenu[1]!}/>
+
+                    return <PopUpTopBar index={index} setIndexFn={setSubMenuValue}  name={'Statistics'} data={props.dropMenu[1]!}/>
                 }
                 if(item.label == 'Shop'){
-                    return <PopUpTopBar name={'Shop'} data={props.dropMenu[2]!}/>
+
+                    return <PopUpTopBar index={index} setIndexFn={setSubMenuValue}  name={'Shop'} data={props.dropMenu[2]!}/>
                 }
 
                 return <Tab key={item.path} component={Link} to={item.path} label={item.label}>

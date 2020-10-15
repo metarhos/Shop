@@ -19,9 +19,8 @@
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
@@ -35,7 +34,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="slave" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -98,7 +97,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
@@ -120,14 +119,30 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1602751265812" />
-    <state x="147" y="69" key="MergeDialog" timestamp="1602751162050">
+    <state width="1493" height="223" key="GridCell.Tab.0.bottom" timestamp="1602751620246">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="147" y="69" key="MergeDialog/0.0.1536.864@0.0.1536.864" timestamp="1602751162050" />
-    <state x="407" y="194" key="MultipleFileMergeDialog" timestamp="1602751162055">
+    <state width="1493" height="223" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1602751620246" />
+    <state width="1493" height="223" key="GridCell.Tab.0.center" timestamp="1602751620245">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="407" y="194" key="MultipleFileMergeDialog/0.0.1536.864@0.0.1536.864" timestamp="1602751162055" />
+    <state width="1493" height="223" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1602751620245" />
+    <state width="1493" height="223" key="GridCell.Tab.0.left" timestamp="1602751620245">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="223" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1602751620245" />
+    <state width="1493" height="223" key="GridCell.Tab.0.right" timestamp="1602751620246">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1493" height="223" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1602751620245" />
+    <state x="147" y="69" key="MergeDialog" timestamp="1602751602256">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="147" y="69" key="MergeDialog/0.0.1536.864@0.0.1536.864" timestamp="1602751602256" />
+    <state x="407" y="194" key="MultipleFileMergeDialog" timestamp="1602751602260">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="407" y="194" key="MultipleFileMergeDialog/0.0.1536.864@0.0.1536.864" timestamp="1602751602260" />
     <state x="361" y="152" key="Vcs.Push.Dialog.v2" timestamp="1602751241607">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

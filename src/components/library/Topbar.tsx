@@ -8,9 +8,10 @@ import DetailsIcon from "@material-ui/icons/Details";
 import PopUpTopBar from "./PopUpTopBar";
 import {makeStyles} from "@material-ui/core/styles";
 import {dropMenu, PATH_EMPLOYEES} from "../../config/Menu";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import BasketItem from "../../models/BasketItem";
 import {ReducersType} from "../../store/store";
+import {tabIndexAction} from "../../store/actions";
 type Props = {
     menu: {path: string, label: string}[],
     countNavigator?: number,
@@ -22,7 +23,7 @@ type Props = {
 const Topbar:React.FC<RouteComponentProps&Props> = (props: RouteComponentProps&Props) => { //React.FC  is special type for checking TS
     //!!! What is it type RouteComponentProps&Props
 
-
+const dispatch = useDispatch();
     const {menu, countNavigator} = props;
     function current(path: string): number {
 
@@ -42,6 +43,7 @@ const Topbar:React.FC<RouteComponentProps&Props> = (props: RouteComponentProps&P
     useEffect(() => {
 
         setValue(currentCallback(props.location.pathname))
+        dispatch(tabIndexAction(currentCallback(props.location.pathname)))
     },[props.countNavigator, props.location.pathname, currentCallback])
     const handleChange = (event: any, tabValue: number) => {
         setValue(tabValue);
@@ -74,6 +76,7 @@ const Topbar:React.FC<RouteComponentProps&Props> = (props: RouteComponentProps&P
     };
 
     function setSubMenuValue(index: number) {
+        dispatch(tabIndexAction(index))
         setValue(index);
     }
 
@@ -98,17 +101,17 @@ const Topbar:React.FC<RouteComponentProps&Props> = (props: RouteComponentProps&P
                if(item.label == 'Employees') {
 
                    return (
-                       <PopUpTopBar index={index} setIndexFn={setSubMenuValue} name={'Employees'} data={props.dropMenu[0]!}/>
+                       <PopUpTopBar index={index} itemPath={item.path} setIndexFn={setSubMenuValue} name={'Employees'} data={props.dropMenu[0]!}/>
                    )
                }
                //here comment for git
                 if(item.label == 'Statistics') {
 
-                    return <PopUpTopBar index={index} setIndexFn={setSubMenuValue}  name={'Statistics'} data={props.dropMenu[1]!}/>
+                    return <PopUpTopBar itemPath={item.path} index={index} setIndexFn={setSubMenuValue}  name={'Statistics'} data={props.dropMenu[1]!}/>
                 }
                 if(item.label == 'Shop'){
 
-                    return <PopUpTopBar index={index} setIndexFn={setSubMenuValue}  name={'Shop'} data={props.dropMenu[2]!}/>
+                    return <PopUpTopBar itemPath={item.path} index={index} setIndexFn={setSubMenuValue}  name={'Shop'} data={props.dropMenu[2]!}/>
                 }
 
                 return <Tab key={item.path} component={Link} to={item.path} label={item.label}>

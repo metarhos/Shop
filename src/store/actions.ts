@@ -2,6 +2,9 @@ import Employee from "../models/EmployeeType";
 import {UserData} from "../services/AuthService";
 import CardItem from "../models/CardItem";
 import BasketItem from "../models/BasketItem";
+
+export const SET_TAB_INDEX = 'set-tab-index';
+
 export const SET_EMPLOYEES = 'set-employees';
 export const SET_CARDITEM = 'set-cards';
 export const SET_BASKETITEM = 'set-baskets';
@@ -23,3 +26,5 @@ export const userDataAction = (userData: UserData): {type: string, payload: any}
     ({type: SET_USER_DATA, payload: userData})
 export const widthAction = (width: number):{type: string, payload: any} =>
     ({type: SET_WINDOW_WIDTH, payload: width})
+export const tabIndexAction = (index: number):{type: string, payload: any} =>
+    ({type: SET_TAB_INDEX, payload: index})

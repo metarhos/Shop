@@ -46,7 +46,7 @@ export const basketItemReducer =
 
 
 export const userDataReducer =
-    (userData: UserData = {isAdmin: false, uid: '', user: ''}, action: { type: string, payload: any }): UserData =>
+    (userData: UserData = {isAdmin: false, uid: 'a', user: 'a'}, action: { type: string, payload: any }): UserData =>
         action.type === SET_USER_DATA ? {...action.payload as UserData} : userData;
 
 export const widthReducer = //return new window width, getting in payload from action

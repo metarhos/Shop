@@ -56,8 +56,8 @@ const useStyles = makeStyles((theme: Theme) =>
 export function getHeaders(width: number, isAdmin: boolean): Map<string, HeaderDescription> {
 //Complite
     const headersWidthArray = headersWidth;
-    const index = headersWidthArray.findIndex(hw => width > hw[0] );
-    return headersWidthArray[index][1];
+     const index = headersWidthArray.findIndex(hw => width > hw[0] );
+     return headersWidthArray[index][1];
 }
 
 
@@ -101,11 +101,11 @@ export const Basket: React.FC<Props> = (props: Props) => {
             productsNew: basket!.productsNew
         }
 
-        basketUpdateN!.productsNew.forEach(bproduct => {
-            if (bproduct.barcode === product.barcode) {
-                bproduct.quantity++
-            }
-        })
+            basketUpdateN!.productsNew.forEach(bproduct => {
+                if (bproduct.barcode === product.barcode) {
+                    bproduct.quantity++
+                }
+            })
 
         await serviceBasket.addBasketItem(basketUpdateN);
         !!props.refreshFn && props.refreshFn()
@@ -122,15 +122,6 @@ export const Basket: React.FC<Props> = (props: Props) => {
         basketUpdateN!.productsNew.forEach(bproduct => {
             if (bproduct.barcode === product.barcode) {
                 bproduct.quantity--
-            }
-            if (bproduct.quantity < 1){
-                idRef.current = product.barcode
-                let ind = basketUpdateN.productsNew.findIndex(bproduct => bproduct.barcode === idRef.current);
-                basketUpdateN.productsNew.splice(ind,1)
-                serviceBasket.addBasketItem(basketUpdateN);
-
-
-
             }
         })
 
@@ -198,9 +189,9 @@ export const Basket: React.FC<Props> = (props: Props) => {
         if(!basket.id){
             return []
         }else{
-            totalPrice = basket.productsNew.reduce(function (p, c) {
-                return p + c.price*c.quantity;
-            }, 0)
+                totalPrice = basket.productsNew.reduce(function (p, c) {
+                    return p + c.price*c.quantity;
+                }, 0)
 
             return basket.productsNew
         }
@@ -214,12 +205,12 @@ export const Basket: React.FC<Props> = (props: Props) => {
                  headers={headers}
                  rows={getProducts()} //array need
                  actions={[
-                     {icon: <AddCircleIcon/>, actionFn: addProduct},
-                     {icon: <RemoveCircleIcon/>, actionFn: removeOneProduct},
-                     {icon: <DeleteIcon/>, actionFn: removeProducts},
+                      {icon: <AddCircleIcon/>, actionFn: addProduct},
+                      {icon: <RemoveCircleIcon/>, actionFn: removeOneProduct},
+                      {icon: <DeleteIcon/>, actionFn: removeProducts},
                      {icon: <DeleteIcon/>, actionFn: clearBasket}
-                 ]}/>
-        <div style={ { 'textAlign': 'right', 'marginRight': '200px', 'marginTop':'20px'} }>{'Total cost is: ' + totalPrice}</div>
+                     ]}/>
+                     <div style={ { 'textAlign': 'right', 'marginRight': '200px', 'marginTop':'20px'} }>{'Total cost is: ' + totalPrice}</div>
         {/*{} -- это делает объект из строк и прочего. И объект надо воткнуть в стили, они только объект едят*/}
         <ConfirmationDialog title={'You are going remove'} open={openRemoveProducts}
                             content={`product with barcode ${idRef.current}`} onClose={onCloseRemoveProducts}/>

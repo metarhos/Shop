@@ -5,7 +5,9 @@ import {
     SET_EMPLOYEES,
     SET_EMPLOYEES_SERVICE,
     SET_USER_DATA,
-    SET_WINDOW_WIDTH
+    SET_WINDOW_WIDTH,
+    SET_TAB_INDEX
+
 } from "./actions";
 import EmployeeServiceObservable from "../services/EmployeeServiceObservable";
 import Employee from "../models/EmployeeType";
@@ -13,6 +15,7 @@ import CardItem from "../models/CardItem";
 import BasketItem from "../models/BasketItem";
 import {useSelector} from "react-redux";
 import {ReducersType} from "./store";
+
 
 export const authServiceReducer =
     (authService: AuthService | null = null,
@@ -49,5 +52,7 @@ export const userDataReducer =
 export const widthReducer = //return new window width, getting in payload from action
     (width: number = window.innerWidth, action: { type: string, payload: any }): number =>
         action.type === SET_WINDOW_WIDTH ? action.payload : width;
-
+export const tabIndexReducer = (index: number = -1,
+                                action: { type: string, payload: any }): number =>
+    action.type === SET_TAB_INDEX ? action.payload : index;
 

@@ -1,14 +1,17 @@
-import React from "react";
-import {IconButton, Menu, MenuItem, Tab, Theme} from "@material-ui/core";
-import DetailsIcon from "@material-ui/icons/Details";
+import React, {useEffect} from "react";
+import { Tab, Theme} from "@material-ui/core";
 import {Link} from "react-router-dom";
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-import {PATH_ADD_EMPLOYEE, PATH_BASKET} from "../../config/Menu";
 import {makeStyles} from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
+import Popper from "@material-ui/core/Popper";
+import {useSelector} from "react-redux";
+import {ReducersType} from "../../store/store";
 type Props = {
     data: any[],
-    name: string
+    name: string,
+    index: number,
+    setIndexFn: (index: number) => void
 
 }
 const useStyles = makeStyles((theme: Theme) =>
@@ -25,11 +28,21 @@ const useStyles = makeStyles((theme: Theme) =>
         },
     }));
 const PopUpTopBar: React.FC<Props> = (props) => {
+
     const classes = useStyles()
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const [flOpen, setFlOpen] = React.useState<boolean>(false);
+    const tabIndex: number = useSelector((state: ReducersType) => state.tabIndex);
+useEffect(() => {
+    if (tabIndex !== props.index){
+        setAnchorEl(null)
+        setFlOpen(false);
+    }
 
-    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+}, [tabIndex])
+    const handleChange = (event: any) => {
+
+        props.setIndexFn(props.index);
         setAnchorEl(event.currentTarget);
         setFlOpen(true)
     };
@@ -43,37 +56,29 @@ const PopUpTopBar: React.FC<Props> = (props) => {
     return <React.Fragment>
 
 
+            <Tab key={props.data[0].path} className={classes.direction} onMouseEnter={handleChange}
 
-        <IconButton size="small" aria-controls="simple-menu" aria-haspopup="true" onMouseEnter={handleClick}
-
-                    onClick={()=>{window.open("http://ya.ru")}}>
-
-            <Tab key={props.data[0].path} className={classes.direction}
-                 component={Link} to={props.data[0].path} label={props.name} icon={<ArrowDropDownIcon />}>
+                label={props.name} icon={<ArrowDropDownIcon /> }>
             </Tab>
 
-        </IconButton>
 
-        <Menu
-            getContentAnchorEl={null}
-            anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-            transformOrigin={{ vertical: "top", horizontal: "center" }}
-            id="simple-menu"
+
+        <Popper
+
             anchorEl={anchorEl}
-            keepMounted
-            open={flOpen}
-            onClose={handleClose}
-        > <div onMouseLeave={handleClose}>
+            open={flOpen}>
+           <Paper style={{display:"flex", flexDirection:"column"}}>
+
             {props.data.map(item =>
-                <div>
-                    <Tab key={item.path} component={Link} to={item.path} label={item.label}>
+
+                    <Tab onClick={handleClose} key={item.path} component={Link} to={item.path} label={item.label}>
                     </Tab>
-                </div>
+
             )}
-        </div>
+           </Paper>
 
 
-        </Menu>
+        </Popper>
 
     </React.Fragment>
 }

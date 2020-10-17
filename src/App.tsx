@@ -51,9 +51,9 @@ import CardItem from "./models/CardItem";
 import Basket from "./components/pages/Basket";
 import BasketItem from "./models/BasketItem";
 import NewCardItem from "./components/pages/NewCardItem";
-//import ShopProgrammers from "./components/pages/ShopProgrammers";
+import ShopProgrammers from "./components/pages/ShopProgrammers";
 
-//check gita
+
 
 function errorHandler(error: ErrorTypes) { //Not research yet
     if (error === ErrorTypes.AUTH_ERROR) {
@@ -98,9 +98,9 @@ function App(): JSX.Element {
                 <Route path={PATH_HOME} exact render={() => {
                     return !!userData.user && <Home/>
                 }}/>
-                {/*<Route path={PATH_SHOP} exact render={() => {*/}
-                {/*    return !!userData.user && <ShopProgrammers />*/}
-                {/*}}/>*/}
+                <Route path={PATH_SHOP} exact render={() => {
+                    return !!userData.user && <ShopProgrammers />
+                }}/>
                 {/*<Route path={PATH_TESTERS} exact render={() => {*/}
                 {/*    return !!userData.user && <ShopTesters />*/}
                 {/*}}/>*/}

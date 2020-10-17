@@ -26,7 +26,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb0911f2-0877-493b-8997-e757f1c65e09" name="Default Changelist" comment="12">
-      <change beforePath="$PROJECT_DIR$/src/components/library/PopUpTopBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/library/PopUpTopBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/AlbumHome.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/AlbumHome.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/ShopProgrammers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/ShopProgrammers.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +39,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="slave" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />

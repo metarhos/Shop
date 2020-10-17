@@ -226,7 +226,7 @@ export default function Album(props: Props) {
                         {cards.map((card:CardItem) => {
 
 
-                          return  <Grid item key={card.id} xs={12} >
+                          return  <Grid item key={card.id} xs={12}  >
                                 <Card className={classes.card}>
                                     <CardMedia
                                         className={classes.cardMedia}

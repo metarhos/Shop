@@ -50,7 +50,8 @@ import CardItem from "./models/CardItem";
 
 import Basket from "./components/pages/Basket";
 import BasketItem from "./models/BasketItem";
-import NewCardItem from "./components/pages/NewCardItem";
+import NewCardItem
+from "./components/pages/NewCardItem";
 import ShopProgrammers from "./components/pages/ShopProgrammers";
 
 

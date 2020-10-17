@@ -11,7 +11,8 @@ type Props = {
     data: any[],
     name: string,
     index: number,
-    setIndexFn: (index: number) => void
+    setIndexFn: (index: number) => void,
+    itemPath: string
 
 }
 const useStyles = makeStyles((theme: Theme) =>
@@ -57,8 +58,8 @@ useEffect(() => {
 
 
             <Tab key={props.data[0].path} className={classes.direction} onMouseEnter={handleChange}
-
-                label={props.name} icon={<ArrowDropDownIcon /> }>
+                 component={Link} to={props.itemPath}
+                 label={props.name} icon={<ArrowDropDownIcon /> }>
             </Tab>
 
 

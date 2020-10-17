@@ -101,17 +101,17 @@ const dispatch = useDispatch();
                if(item.label == 'Employees') {
 
                    return (
-                       <PopUpTopBar index={index} setIndexFn={setSubMenuValue} name={'Employees'} data={props.dropMenu[0]!}/>
+                       <PopUpTopBar index={index} itemPath={item.path} setIndexFn={setSubMenuValue} name={'Employees'} data={props.dropMenu[0]!}/>
                    )
                }
                //here comment for git
                 if(item.label == 'Statistics') {
 
-                    return <PopUpTopBar index={index} setIndexFn={setSubMenuValue}  name={'Statistics'} data={props.dropMenu[1]!}/>
+                    return <PopUpTopBar itemPath={item.path} index={index} setIndexFn={setSubMenuValue}  name={'Statistics'} data={props.dropMenu[1]!}/>
                 }
                 if(item.label == 'Shop'){
 
-                    return <PopUpTopBar index={index} setIndexFn={setSubMenuValue}  name={'Shop'} data={props.dropMenu[2]!}/>
+                    return <PopUpTopBar itemPath={item.path} index={index} setIndexFn={setSubMenuValue}  name={'Shop'} data={props.dropMenu[2]!}/>
                 }
 
                 return <Tab key={item.path} component={Link} to={item.path} label={item.label}>

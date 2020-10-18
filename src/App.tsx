@@ -50,8 +50,8 @@ import CardItem from "./models/CardItem";
 
 import Basket from "./components/pages/Basket";
 import BasketItem from "./models/BasketItem";
-import NewCardItem
-from "./components/pages/NewCardItem";
+import NewCardItem from "./components/pages/NewCardItem";
+
 import ShopProgrammers from "./components/pages/ShopProgrammers";
 
 
@@ -111,28 +111,28 @@ function App(): JSX.Element {
                 <Route path={PATH_LOGOUT} exact render={() => {
                     return !!userData.user && <Logout/>
                 }}/>
-                <Route path={PATH_EMPLOYEES} exact render={() =>
-                    !!userData.user && <Employees />}/>
+                {/*<Route path={PATH_EMPLOYEES} exact render={() =>*/}
+                {/*    !!userData.user && <Employees />}/>*/}
                 <Route path={PATH_ADD_PRODUCT} exact render={() =>
                     !!userData.user && <NewCardItem
                         backPath={PATH_HOME}/>}/>
-                <Route path={PATH_ADD_EMPLOYEE} exact render={() =>
-                    // userData.isAdmin && <NewEmployee
-                    userData.user && <NewEmployee
-                        backPath={PATH_EMPLOYEES}/>}/>
+                {/*<Route path={PATH_ADD_EMPLOYEE} exact render={() =>*/}
+                {/*    // userData.isAdmin && <NewEmployee*/}
+                {/*    userData.user && <NewEmployee*/}
+                {/*        backPath={PATH_EMPLOYEES}/>}/>*/}
                 <Route path={PATH_BASKET} exact render={() =>
                     !!userData.user && <Basket />}/>
-                <Route path={PATH_GENERATION} exact render={() => userData.isAdmin && <EmployeesGeneration
-                />}/>
-                <Route path={PATH_SALARY_STATISTICS} exact render={
-                    () => !!userData.user && <SalaryStatistics
-                    />}/>
-                <Route path={PATH_DEPARTMENT_STATISTICS} exact render={
-                    () => !!userData.user && <DepartmentStatistics
-                    />}/>
-                <Route path={PATH_SEARCH} exact render={
-                    () => !!userData.user && <EmployeesSearch
-                    />}/>
+                {/*<Route path={PATH_GENERATION} exact render={() => userData.isAdmin && <EmployeesGeneration*/}
+                {/*/>}/>*/}
+                {/*<Route path={PATH_SALARY_STATISTICS} exact render={*/}
+                {/*    () => !!userData.user && <SalaryStatistics*/}
+                {/*    />}/>*/}
+                {/*<Route path={PATH_DEPARTMENT_STATISTICS} exact render={*/}
+                {/*    () => !!userData.user && <DepartmentStatistics*/}
+                {/*    />}/>*/}
+                {/*<Route path={PATH_SEARCH} exact render={*/}
+                {/*    () => !!userData.user && <EmployeesSearch*/}
+                {/*    />}/>*/}
             </Switch>
         </HashRouter>
         {/*</BasketProvider>*/}

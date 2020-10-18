@@ -14,6 +14,12 @@ const Login: React.FC = () => {
         return authService.login({email: loginData.username,
             password: loginData.password})
     }
+
+    const onSignUp = (loginData: { username:string, password: string }):Promise<LoginCodes> => {
+        return authService.signUp({email: loginData.username,
+            password: loginData.password})
+    }
+
     const validatePasswordLength = (password: string) :string =>{
         return password.length < 6 ? "password can't be less than 6 symbols" :''
     }
@@ -21,6 +27,8 @@ const Login: React.FC = () => {
         <LoginForm onSubmit={onSubmit} passwordErrorMessage={validatePasswordLength}/>
         <br/>or<br/><br/>
         <button onClick={() => serviceAuth('google')}>Authentication through Google</button>
+        <br/>or sign Up new user<br/><br/>
+        <LoginForm onSubmit={onSignUp} passwordErrorMessage={validatePasswordLength}/>
     </React.Fragment>
 
 }

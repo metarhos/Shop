@@ -32,6 +32,11 @@ export default class AuthServiceFirebase implements AuthService {
             .then(() => LoginCodes.OK).catch(() => LoginCodes.WRONG_CREDENTIALS);
     }
 
+    signUp(loginData: LoginData): Promise<LoginCodes> {
+        return appFirebase.auth().createUserWithEmailAndPassword(loginData.email, loginData.password)
+            .then(() => LoginCodes.OK).catch(() => LoginCodes.WRONG_CREDENTIALS);
+    }
+
     logout(): Promise<boolean> {
         return appFirebase.auth().signOut().then(()=>true);
     }

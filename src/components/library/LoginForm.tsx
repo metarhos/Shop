@@ -5,7 +5,7 @@ import LoginCodes from "../../util/LoginCodes";
 
 type Props = {
     passwordErrorMessage?: (password: string)=>string,
-    onSubmit: (loginData: { username:string, password: string })=>Promise<LoginCodes>,
+    onSubmit: (loginData: { username:string, password: string })=>Promise<LoginCodes>
     backPath?: string
 }
 const LoginForm: React.FC<Props> = (props: Props) => {
@@ -26,6 +26,7 @@ const LoginForm: React.FC<Props> = (props: Props) => {
     }
     const onSubmitHandler = async (event: any) => {
         event.preventDefault();
+
 
         const res: LoginCodes = await onSubmit(loginData);
         if (res === LoginCodes.OK) {
@@ -54,7 +55,8 @@ const LoginForm: React.FC<Props> = (props: Props) => {
                        type={'password'} helperText={passwordErrorMessage &&
             passwordErrorMessage(loginData.password)}/>
             <div>
-                <Button color={'primary'} disabled={!isValid} type={'submit'}>Submit</Button>
+                <Button color={'primary'} id="s1"  disabled={!isValid} type={'submit'}>Submit</Button>
+
                 <Button color={'primary'} type={'reset'}>Reset</Button>
             </div>
 

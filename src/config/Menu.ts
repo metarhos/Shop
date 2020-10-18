@@ -10,14 +10,15 @@ export const PATH_SEARCH = '/employees/search';
 export const PATH_DEPARTMENT_STATISTICS = '/department/statistics';
 export const PATH_SALARY_STATISTICS = '/salary/statistics';
 export const PATH_LOGIN = '/login';
+
 export const PATH_LOGOUT = '/logout';
 
 export const menu: { path: string, label: string, admin?: boolean }[] = [
     {path: PATH_HOME, label: 'Home'},
     {path: PATH_SHOP, label: 'Shop'},
     {path: PATH_ADD_PRODUCT, label: 'New Product', admin: true},
-    {path: PATH_EMPLOYEES, label: 'Employees'},
-    {path: PATH_DEPARTMENT_STATISTICS, label: 'Statistics'},
+     {path: PATH_EMPLOYEES, label: 'Employees', admin: true},
+     {path: PATH_DEPARTMENT_STATISTICS, label: 'Statistics', admin: true},
     {path: PATH_BASKET, label: 'Basket'},
     {path: PATH_LOGOUT, label: 'Logout'},
 ]
